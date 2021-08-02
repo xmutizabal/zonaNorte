@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Hola mundo con Vue.js</title>
+    </head>
+
+    <body>
+        
+        <div id="app">
+            <h1>{{titulo}}</h1>
+
+            <input type="text" v-model="nuevoCorredor">
+            <button v-on:click="agregarCorredor">Agregar</button>
+            <ul>
+                <li v-for="obj of corredores">
+                    {{obj.nombre}} - {{obj.posicion}}
+                    <span v-if="obj.edad<=40"> - Todo Competidor</span>
+                    <h3>hola</h3>
+                </li>
+            </ul>
+        </div>
+
+
+    
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="01.js"></script>
+    </body>
+</html>
