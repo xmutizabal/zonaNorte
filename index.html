@@ -11,15 +11,17 @@
         <div id="app">
             <h1>{{titulo}}</h1>
 
-            <input type="text" v-model="nuevoCorredor">
+            <input type="text" v-model="nuevoCorredor" v-on:keyup.enter="agregarCorredor">
             <button v-on:click="agregarCorredor">Agregar</button>
             <ul>
                 <li v-for="obj of corredores">
-                    {{obj.nombre}} - {{obj.posicion}}
+                    <input type="number" v-model.number="obj.edad">
+                    {{obj.nombre}}
+                    <button v-on:click="obj.edad++">+</button>
                     <span v-if="obj.edad<=40"> - Todo Competidor</span>
-                    <h3>hola</h3>
                 </li>
             </ul>
+            <h4>Total : {{sumarEdades}}</h4>
         </div>
 
 
